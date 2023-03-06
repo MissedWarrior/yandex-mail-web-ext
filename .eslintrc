@@ -1,3 +1,36 @@
 {
-  "extends": "@antfu"
+  "extends": "@antfu",
+  "rules": {
+    "@typescript-eslint/semi": [
+      "error",
+      "always"
+    ],
+    "curly": "off",
+    "vue/html-closing-bracket-spacing": [
+      "error",
+      {
+        "startTag": "never",
+        "endTag": "never",
+        "selfClosingTag": "never"
+      }
+    ],
+    "@typescript-eslint/brace-style": [
+      "error",
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      "multiline": {
+        "delimiter": "semi",
+        "requireLast": true
+      },
+      "singleline": {
+        "delimiter": "semi",
+        "requireLast": false
+      },
+      "multilineDetection": "brackets"
+    }]
+  }
 }

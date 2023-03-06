@@ -1,10 +1,9 @@
 {
-  "name": "vitesse-webext",
-  "displayName": "Vitesse WebExt",
+  "name": "yandex-mail-web-ext",
+  "displayName": "Yandex Mail Web Extension",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@7.8.0",
-  "description": "[description]",
+  "description": "Yandex Mail web extension that provides access to simple management of your mail",
   "scripts": {
     "dev": "npm run clear && cross-env NODE_ENV=development run-p dev:*",
     "dev:prepare": "esno scripts/prepare.ts",
@@ -19,7 +18,7 @@
     "pack:crx": "crx pack extension -o ./extension.crx",
     "pack:xpi": "cross-env WEB_EXT_ARTIFACTS_DIR=./ web-ext build --source-dir ./extension --filename extension.xpi --overwrite-dest",
     "start:chromium": "web-ext run --source-dir ./extension --target=chromium",
-    "start:firefox": "web-ext run --source-dir ./extension --target=firefox-desktop",
+    "start:firefox": "web-ext run -t=firefox-desktop -f=\"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\" --source-dir ./extension --verbose",
     "clear": "rimraf extension/dist extension/manifest.json extension.*",
     "lint": "eslint .",
     "test": "vitest test"

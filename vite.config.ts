@@ -1,15 +1,15 @@
 /// <reference types="vitest" />
 
-import { dirname, relative } from 'path'
-import type { UserConfig } from 'vite'
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import Components from 'unplugin-vue-components/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import UnoCSS from 'unocss/vite'
-import { isDev, port, r } from './scripts/utils'
+import { dirname, relative } from 'path';
+import type { UserConfig } from 'vite';
+import { defineConfig } from 'vite';
+import Vue from '@vitejs/plugin-vue';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import Components from 'unplugin-vue-components/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import UnoCSS from 'unocss/vite';
+import { isDev, port, r } from './scripts/utils';
 
 export const sharedConfig: UserConfig = {
   root: r('src'),
@@ -61,7 +61,7 @@ export const sharedConfig: UserConfig = {
       enforce: 'post',
       apply: 'build',
       transformIndexHtml(html, { path }) {
-        return html.replace(/"\/assets\//g, `"${relative(dirname(path), '/assets')}/`)
+        return html.replace(/"\/assets\//g, `"${relative(dirname(path), '/assets')}/`);
       },
     },
   ],
@@ -75,7 +75,7 @@ export const sharedConfig: UserConfig = {
       'vue-demi',
     ],
   },
-}
+};
 
 export default defineConfig(({ command }) => ({
   ...sharedConfig,
@@ -106,4 +106,4 @@ export default defineConfig(({ command }) => ({
     globals: true,
     environment: 'jsdom',
   },
-}))
+}));

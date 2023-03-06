@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import { useToggle } from '@vueuse/core'
-import 'uno.css'
+import { useToggle } from '@vueuse/core';
+import 'uno.css';
 
-const [show, toggle] = useToggle(false)
+const [show, toggle] = useToggle(false);
+
+if (!show) {
+  console.log('test');
+}
 </script>
 
 <template>
@@ -17,14 +21,14 @@ const [show, toggle] = useToggle(false)
       <h1 class="text-lg">
         Vitesse WebExt
       </h1>
-      <SharedSubtitle />
+      <SharedSubtitle/>
     </div>
     <div
       class="flex w-10 h-10 rounded-full shadow cursor-pointer"
       bg="teal-600 hover:teal-700"
       @click="toggle()"
     >
-      <pixelarticons-power class="block m-auto text-white text-lg" />
+      <pixelarticons-power class="block m-auto text-white text-lg"/>
     </div>
   </div>
 </template>
