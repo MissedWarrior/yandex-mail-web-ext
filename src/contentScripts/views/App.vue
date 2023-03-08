@@ -3,10 +3,6 @@ import { useToggle } from '@vueuse/core';
 import 'uno.css';
 
 const [show, toggle] = useToggle(false);
-
-if (!show) {
-  console.log('test');
-}
 </script>
 
 <template>
